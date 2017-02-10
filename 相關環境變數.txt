@@ -1,0 +1,2 @@
+process.env.GOOGLE_PROJECT_ID='YOUR_PRJ_ID'  // E.g. 'grape-spaceship-123'
+process.env.GOOGLE_APPLICATION_CREDENTIALS='/PATH_TO_YOUR/keyfile.json';
