@@ -213,10 +213,22 @@ function streamingMicRecognize (encoding, sampleRate) {
   // The sample rate of the audio file, e.g. 16000
   // const sampleRate = 16000;
 
+  // --- DEFAULT ------
+  // const request = {
+  //   config: {
+  //     encoding: encoding,
+  //     sampleRate: sampleRate
+  //   }
+  // };
+
+  // Default languageCode "en-US" 
+  // Test for 繁體中文辨識 "cmn-Hant-TW"
+  // Reference of language_code: https://cloud.google.com/speech/docs/languages
   const request = {
     config: {
       encoding: encoding,
-      sampleRate: sampleRate
+      sampleRate: sampleRate,
+      languageCode: "cmn-Hant-TW" 
     }
   };
 
