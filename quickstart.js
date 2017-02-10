@@ -20,7 +20,7 @@
 const Speech = require('@google-cloud/speech');
 
 // Your Google Cloud Platform project ID
-const projectId = 'YOUR_PROJECT_ID';
+const projectId = process.env.GOOGLE_PROJECT_ID; // 'YOUR_PROJECT_ID';
 
 // Instantiates a client
 const speechClient = Speech({
