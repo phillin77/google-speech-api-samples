@@ -37,9 +37,22 @@ const options = {
 };
 
 // Detects speech in the audio file
-speechClient.recognize(fileName, options)
-  .then((results) => {
-    const transcription = results[0];
-    console.log(`Transcription: ${transcription}`);
-  });
+
+// Note: 原本範例的寫法
+// speechClient.recognize(fileName, options)
+//   .then((results) => {
+//     const transcription = results[0];
+//     console.log(`Transcription: ${transcription}`);
+//   });
+
+// Note: 改成檢查 err 的寫法
+speechClient.recognize(fileName, options, function(err, transcript) {
+  if (err) {
+    console.log("err:" + err);
+    return;
+  }
+	
+  console.log("transcript:" + transcript)
+  // transcript = 'how old is the Brooklyn Bridge'
+});
 // [END speech_quickstart]
